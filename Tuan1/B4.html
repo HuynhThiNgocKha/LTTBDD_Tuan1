@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 4</title>
+</head>
+<body>
+    <script>
+        let billValues = [275, 40, 430];
+
+        let tip = billValues >= 50 && billValues <= 300 ? billValues * 0.15 : billValues * 0.2;
+        let totalValue = billValues + tip;
+
+        console.log(`The bill was ${billValues}, the tip was ${tip}, and the total value ${totalValue}`);
+
+    </script>
+</body>
+</html>

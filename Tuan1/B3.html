@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 3</title>
+</head>
+<body>
+    <script>
+        let dolphinsScores1 = [96, 108, 89];
+        let koalasScores1 = [88, 91, 110];
+
+        let dolphinsScores2 = [97, 112, 101];
+        let koalasScores2 = [109, 95, 123];
+        
+        let dolphinsScores3 = [97, 112, 101];
+        let koalasScores3 = [109, 95, 106];
+        
+        function AverageScore(scores) {
+        return scores.reduce((total, score) => total + score, 0) / scores.length;
+        }
+
+        function check(dolphinsScores, koalasScores, minScoreRequired) {
+        let averageDolphins = calculateAverageScore(dolphinsScores);
+        let averageKoalas = calculateAverageScore(koalasScores);
+
+        if (averageDolphins >= minScoreRequired && averageDolphins > averageKoalas) {
+            console.log("Dolphins win!");
+        } else if (averageKoalas >= minScoreRequired && averageKoalas > averageDolphins) {
+            console.log("Koalas win!");
+        } else if (averageDolphins >= minScoreRequired && averageKoalas >= minScoreRequired && averageDolphins === averageKoalas) {
+            console.log("It's a draw with a minimum score of " + minScoreRequired);
+        } else {
+            console.log("No team wins the trophy.");
+        }
+        }
+
+        console.log("Data 1:");
+        checkWinner(dolphinsScores1, koalasScores1, 100);
+
+        console.log("\nData Bonus 1:");
+        checkWinner(dolphinsScores2, koalasScores2, 100);
+
+        console.log("\nData Bonus 2:");
+        checkWinner(dolphinsScores3, koalasScores3, 100);
+       
+    </script>
+</body>
+</html>
